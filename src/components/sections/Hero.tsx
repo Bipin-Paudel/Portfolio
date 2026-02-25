@@ -120,8 +120,11 @@ export default function Hero() {
         <section
             id="home"
             ref={ref}
+            aria-label="Hero section — Bipin Paudel, Full-Stack Developer"
             className="relative min-h-screen flex flex-col justify-center overflow-hidden"
         >
+            {/* Visually hidden heading for SEO — ensures crawlers see the full role descriptions */}
+            <h2 className="sr-only">Bipin Paudel — Fullstack Developer, Python Developer, AI/ML Enthusiast, React / Next.js Developer</h2>
             {/* ── Dot-grid background ── */}
             <div className="absolute inset-0 dot-grid opacity-60" />
 
@@ -267,8 +270,8 @@ export default function Hero() {
 
                             <div className="flex gap-3">
                                 {[
-                                    { href: portfolioData.socials.github, icon: <Github className="w-5 h-5" />, label: "GitHub" },
-                                    { href: portfolioData.socials.linkedin, icon: <Linkedin className="w-5 h-5" />, label: "LinkedIn" },
+                                    { href: portfolioData.socials.github, icon: <Github className="w-5 h-5" />, label: "GitHub profile of Bipin Paudel" },
+                                    { href: portfolioData.socials.linkedin, icon: <Linkedin className="w-5 h-5" />, label: "LinkedIn profile of Bipin Paudel" },
                                 ].map((s) => (
                                     <Link key={s.label} href={s.href} target="_blank" aria-label={s.label}
                                         className="p-3 rounded-full bg-secondary/70 backdrop-blur-sm hover:bg-primary hover:text-white 
@@ -303,7 +306,7 @@ export default function Hero() {
                                  animate-tilt border-2 border-white/20 relative">
                                     <Image
                                         src="/Bipin.png"
-                                        alt="Bipin Paudel"
+                                        alt="Bipin Paudel — Full-Stack Developer and ML Engineer from Nepal"
                                         fill
                                         className="object-cover"
                                         priority

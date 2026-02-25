@@ -1,8 +1,12 @@
+import type { Metadata } from "next";
 import { portfolioData } from "@/data/portfolio";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Github, ExternalLink, Layers } from "lucide-react";
 import ProjectImage from "@/components/sections/ProjectImage";
+import { ProjectJsonLd, BreadcrumbJsonLd } from "@/components/seo/JsonLd";
+
+const BASE_URL = "https://paudelbipin.com.np";
 
 export function generateStaticParams() {
     return portfolioData.projects.map((project) => ({
@@ -14,6 +18,55 @@ type PageProps = {
     params: Promise<{ slug: string }>;
 };
 
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+    const { slug } = await params;
+    const project = portfolioData.projects.find((p) => p.slug === slug);
+
+    if (!project) {
+        return {
+            title: "Project Not Found",
+        };
+    }
+
+    return {
+        title: `${project.title} — Case Study`,
+        description: `${project.description} Built with ${project.techStack.join(", ")}. ${project.problem}`,
+        alternates: {
+            canonical: `${BASE_URL}/projects/${project.slug}`,
+        },
+        openGraph: {
+            title: `${project.title} — Bipin Paudel`,
+            description: project.description,
+            url: `${BASE_URL}/projects/${project.slug}`,
+            type: "article",
+            images: project.image
+                ? [
+                    {
+                        url: project.image,
+                        width: 1200,
+                        height: 630,
+                        alt: project.title,
+                    },
+                ]
+                : [],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: `${project.title} — Bipin Paudel`,
+            description: project.description,
+            images: project.image ? [project.image] : [],
+        },
+        keywords: [
+            project.title,
+            ...project.techStack,
+            project.category,
+            "Bipin Paudel",
+            "Case Study",
+            "Project",
+        ],
+    };
+}
+
 export default async function ProjectDetail({ params }: PageProps) {
     const { slug } = await params;
     const project = portfolioData.projects.find((p) => p.slug === slug);
@@ -24,6 +77,15 @@ export default async function ProjectDetail({ params }: PageProps) {
 
     return (
         <article className="min-h-screen pt-32 pb-24 max-w-4xl mx-auto px-4">
+            <ProjectJsonLd project={project} />
+            <BreadcrumbJsonLd
+                items={[
+                    { name: "Home", url: BASE_URL },
+                    { name: "Projects", url: `${BASE_URL}/projects` },
+                    { name: project.title, url: `${BASE_URL}/projects/${project.slug}` },
+                ]}
+            />
+
             {/* Back Button */}
             <Link
                 href="/projects"
@@ -75,6 +137,8 @@ export default async function ProjectDetail({ params }: PageProps) {
                         <Link
                             href={project!.githubUrl}
                             target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`View ${project!.title} source code on GitHub`}
                             className="flex items-center justify-center gap-2 px-6 py-3 bg-secondary hover:bg-secondary/80 text-secondary-foreground rounded-xl font-medium transition-colors"
                         >
                             <Github className="w-5 h-5" />
@@ -85,6 +149,8 @@ export default async function ProjectDetail({ params }: PageProps) {
                         <Link
                             href={project!.liveUrl}
                             target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`Visit ${project!.title} live demo`}
                             className="flex items-center justify-center gap-2 px-6 py-3 bg-primary hover:bg-primary/90 text-primary-foreground shadow-sm rounded-xl font-medium transition-colors"
                         >
                             <ExternalLink className="w-5 h-5" />
@@ -97,7 +163,7 @@ export default async function ProjectDetail({ params }: PageProps) {
             {/* Main Content Area */}
             <div className="space-y-16">
                 {/* Cover Image */}
-                <ProjectImage src={project.image} alt={project.title} />
+                <ProjectImage src={project.image} alt={`${project.title} — ${project.description.substring(0, 60)}`} />
 
                 {/* Problem Statement Section */}
                 <section>

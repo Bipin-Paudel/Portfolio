@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Skills from "@/components/sections/Skills";
+import HomeProjects from "@/components/sections/HomeProjects";
 import Experience from "@/components/sections/Experience";
 import Contact from "@/components/sections/Contact";
 
@@ -20,6 +21,7 @@ export default function Home() {
       <Hero />
       <About />
       <Skills />
+      <HomeProjects />
       <Experience />
       <Contact />
     </div>

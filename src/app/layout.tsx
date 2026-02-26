@@ -5,7 +5,11 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import CanvasCursor from "@/components/ui/CanvasCursor";
-import { PersonJsonLd, WebSiteJsonLd, ProfilePageJsonLd } from "@/components/seo/JsonLd";
+import {
+  PersonJsonLd,
+  WebSiteJsonLd,
+  ProfilePageJsonLd,
+} from "@/components/seo/JsonLd";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -134,7 +138,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col bg-background text-foreground`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           <Navbar />
           <CanvasCursor />
           <main className="flex-1">{children}</main>

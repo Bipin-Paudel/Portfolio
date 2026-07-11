@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { portfolioData } from "@/data/portfolio";
-import { Github, Linkedin, Twitter, Instagram } from "lucide-react";
+import { Github, Linkedin, Twitter, Instagram, Youtube } from "lucide-react";
 
 export function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
         <footer className="border-t border-border bg-background py-8 mt-12">
-            <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="max-w-6xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
                 <p className="text-sm text-muted-foreground">
                     &copy; {currentYear} {portfolioData.about.name}. All rights reserved.
                 </p>
@@ -47,6 +47,15 @@ export function Footer() {
                     >
                         <span className="sr-only">Instagram</span>
                         <Instagram size={20} />
+                    </Link>
+                    <Link
+                        href={portfolioData.socials.youtube}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                        <span className="sr-only">YouTube</span>
+                        <Youtube size={20} />
                     </Link>
                 </div>
             </div>

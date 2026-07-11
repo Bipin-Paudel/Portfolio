@@ -1,11 +1,11 @@
 {
-    "name": "Bipin Paudel — Full-Stack Developer & ML Engineer",
+    "name": "Bipin Paudel | AI & Backend Developer",
     "short_name": "Bipin Paudel",
-    "description": "Portfolio of Bipin Paudel — Computer Science student and full-stack developer skilled in Django, React, Next.js, and Machine Learning based in Nepal.",
+    "description": "Portfolio of Bipin Paudel, an AI and backend developer from Nepal working with Python, Django, Next.js, and machine learning.",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#0a0a0a",
-    "theme_color": "#2563eb",
+    "background_color": "#0c0a09",
+    "theme_color": "#0f766e",
     "icons": [
         {
             "src": "/favicon.svg",
@@ -13,9 +13,16 @@
             "type": "image/svg+xml"
         },
         {
-            "src": "/favicon.png",
+            "src": "/icon-192.png",
             "sizes": "192x192",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
         }
     ]
 }

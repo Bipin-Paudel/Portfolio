@@ -4,7 +4,6 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import CanvasCursor from "@/components/ui/CanvasCursor";
 import {
   PersonJsonLd,
   WebSiteJsonLd,
@@ -27,8 +26,8 @@ const BASE_URL = "https://paudelbipin.com.np";
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
+    { media: "(prefers-color-scheme: light)", color: "#fafafa" },
+    { media: "(prefers-color-scheme: dark)", color: "#0c0a09" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -37,36 +36,21 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Bipin Paudel | Full-Stack Developer & ML Engineer — Nepal",
+    default: "Bipin Paudel | AI & Backend Developer",
     template: "%s | Bipin Paudel",
   },
   description:
-    "Portfolio of Bipin Paudel — Computer Science student and full-stack developer from Nepal, skilled in Python, Django, React, Next.js, FastAPI, and Machine Learning. Building scalable, impact-driven software solutions.",
+    "AI & Backend developer from Nepal. I build web apps with Python, Django, and Next.js, and work on machine learning projects like research-gap analysis.",
   keywords: [
     "Bipin Paudel",
-    "Full-Stack Developer",
-    "Python Developer",
-    "Django Developer",
-    "React Developer",
-    "Next.js Developer",
-    "Machine Learning Engineer",
-    "ML Engineer Nepal",
-    "Web Developer Nepal",
-    "Software Developer Nepal",
-    "Bharatpur Developer",
-    "Chitwan Developer",
-    "FastAPI Developer",
-    "Computer Science Student Nepal",
-    "Tribhuvan University",
-    "Portfolio",
-    "Bipin Paudel Portfolio",
-    "Fullstack Developer Nepal",
-    "paudelbipin",
+    "AI Developer",
+    "Backend Developer",
+    "Python",
+    "Machine Learning",
+    "Nepal",
   ],
   authors: [{ name: "Bipin Paudel", url: BASE_URL }],
   creator: "Bipin Paudel",
-  publisher: "Bipin Paudel",
-  category: "Portfolio",
   alternates: {
     canonical: BASE_URL,
   },
@@ -74,17 +58,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: BASE_URL,
-    siteName: "Bipin Paudel Portfolio",
-    title: "Bipin Paudel | Full-Stack Developer & ML Engineer",
+    siteName: "Bipin Paudel",
+    title: "Bipin Paudel | AI & Backend Developer",
     description:
-      "Portfolio of Bipin Paudel — Full-Stack Developer and ML Engineer from Nepal, specializing in Python, Django, React, Next.js, and Machine Learning.",
+      "AI & Backend developer from Nepal working with Python, Django, Next.js, and machine learning.",
     images: [
       {
-        url: "/Bipin.png",
+        url: "/bipin.jpg",
         width: 800,
         height: 800,
-        alt: "Bipin Paudel — Full-Stack Developer & ML Engineer",
-        type: "image/png",
+        alt: "Bipin Paudel",
       },
     ],
   },
@@ -92,35 +75,30 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@paudelbipin19",
     creator: "@paudelbipin19",
-    title: "Bipin Paudel | Full-Stack Developer & ML Engineer",
+    title: "Bipin Paudel | AI & Backend Developer",
     description:
-      "Portfolio of Bipin Paudel — Full-Stack Developer and ML Engineer from Nepal. Python · Django · React · Next.js · Machine Learning.",
-    images: ["/Bipin.png"],
+      "AI & Backend developer from Nepal working with Python, Django, Next.js, and machine learning.",
+    images: ["/bipin.jpg"],
   },
   robots: {
     index: true,
     follow: true,
-    nocache: false,
     googleBot: {
       index: true,
       follow: true,
-      "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1,
     },
   },
   icons: {
     icon: [
+      { url: "/favicon.ico", sizes: "48x48" },
       { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon.png", type: "image/png", sizes: "192x192" },
+      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
     ],
-    shortcut: "/favicon.svg",
-    apple: "/favicon.png",
+    apple: "/apple-touch-icon.png",
   },
   manifest: "/manifest.json",
-  other: {
-    "google-site-verification": "YOUR_GOOGLE_VERIFICATION_CODE",
-  },
 };
 
 export default function RootLayout({
@@ -145,7 +123,6 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <CanvasCursor />
           <main className="flex-1">{children}</main>
           <Footer />
         </ThemeProvider>

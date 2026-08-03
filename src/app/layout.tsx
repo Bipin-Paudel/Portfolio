@@ -108,12 +108,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
+      <body className="antialiased min-h-screen flex flex-col bg-background text-foreground">
         <PersonJsonLd />
         <WebSiteJsonLd />
         <ProfilePageJsonLd />
-      </head>
-      <body className="antialiased min-h-screen flex flex-col bg-background text-foreground">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

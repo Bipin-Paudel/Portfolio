@@ -64,7 +64,7 @@ export const metadata: Metadata = {
       "AI & Backend developer from Nepal working with Python, Django, Next.js, and machine learning.",
     images: [
       {
-        url: "/bipin.jpg",
+        url: `${BASE_URL}/bipin.jpg`,
         width: 800,
         height: 800,
         alt: "Bipin Paudel",
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     title: "Bipin Paudel | AI & Backend Developer",
     description:
       "AI & Backend developer from Nepal working with Python, Django, Next.js, and machine learning.",
-    images: ["/bipin.jpg"],
+    images: [`${BASE_URL}/bipin.jpg`],
   },
   robots: {
     index: true,

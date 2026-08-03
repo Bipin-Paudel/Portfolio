@@ -3,7 +3,7 @@ import { portfolioData } from "@/data/portfolio";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, Github, ExternalLink } from "lucide-react";
+import { ArrowLeft, Github, ExternalLink, Smartphone } from "lucide-react";
 import ProjectCover from "@/components/sections/ProjectCover";
 import { ProjectJsonLd, BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 
@@ -115,7 +115,18 @@ export default async function ProjectDetail({ params }: PageProps) {
           </div>
         </div>
 
-        <div className="flex gap-3 shrink-0">
+        <div className="flex flex-wrap gap-3 shrink-0">
+          {project.playStoreUrl && (
+            <a
+              href={project.playStoreUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-md text-sm font-medium transition-colors"
+            >
+              <Smartphone className="w-4 h-4" />
+              Google Play
+            </a>
+          )}
           {project.githubUrl && (
             <a
               href={project.githubUrl}
@@ -138,7 +149,7 @@ export default async function ProjectDetail({ params }: PageProps) {
               Visit Site
             </a>
           )}
-          {!project.githubUrl && !project.liveUrl && (
+          {!project.githubUrl && !project.liveUrl && !project.playStoreUrl && (
             <p className="text-sm text-muted-foreground self-center">
               Code available on request.
             </p>
@@ -152,7 +163,7 @@ export default async function ProjectDetail({ params }: PageProps) {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {project.gallery.map((shot) => (
               <figure key={shot.src} className="min-w-0">
-                <div className="relative aspect-video w-full rounded-lg border border-border bg-secondary overflow-hidden">
+                <div className="relative aspect-video w-full rounded-lg border border-border bg-secondary overflow-hidden shadow-sm">
                   <Image
                     src={shot.src}
                     alt={shot.caption}

@@ -2,11 +2,12 @@ export type Project = {
   slug: string;
   title: string;
   description: string;
-  category: "AI/ML" | "Web";
+  category: "AI/ML" | "Web" | "Mobile";
   techStack: string[];
   role?: string;
   githubUrl?: string;
   liveUrl?: string;
+  playStoreUrl?: string;
   image?: string;
   gallery?: { src: string; caption: string }[];
   problem: string;
@@ -18,9 +19,9 @@ export const portfolioData = {
     name: "Bipin Paudel",
     title: "AI & Backend Developer",
     tagline:
-      "Computer Science student from Nepal building real web apps with Python, React, and a bit of machine learning. I care more about things that actually work than things that look impressive.",
+      "Computer Science student from Nepal building web apps with Python, React, Next.js, and machine learning. I care more about things that actually work than things that look impressive.",
     description:
-      "I'm studying Computer Science at Tribhuvan University and have been building web apps on the side since I started. My stack is mostly Python and Django on the backend, React and Next.js on the frontend. I've done some ML projects too, mostly classification and data analysis work. I like problems that have a real use case behind them.",
+      "I'm studying Computer Science at Tribhuvan University and building web and AI applications on the backend and frontend. My stack is Python, Django, FastAPI, React, Next.js, and practical ML/RAG systems.",
     address: "Bharatpur-11, Chitwan",
     phone: "+977 9844735418",
     email: "info@paudelbipin.com.np",
@@ -124,7 +125,13 @@ export const portfolioData = {
       "Sentence-BERT",
       "LangChain / RAG",
     ],
-    mobile: ["React Native"],
+    mobile: [
+      "React Native",
+      "Expo",
+      "Android Development",
+      "Mobile Architecture",
+      "Google Play Publishing",
+    ],
     databases: ["PostgreSQL", "MySQL", "MongoDB", "SQLite"],
     tools: ["Git", "Docker", "VS Code", "Postman", "Linux"],
   },
@@ -144,14 +151,34 @@ export const portfolioData = {
         "Papers are ingested from sources like arXiv and OpenAlex, embedded with Sentence-BERT, then clustered with K-Means to group them by theme. Bibliometric analysis on each cluster looks at publication counts, recency, and citation activity to surface the underexplored themes. The app itself walks users through collecting papers, clustering them, pinpointing gaps, and exporting a report, with a Next.js frontend.",
     },
     {
+      slug: "aone-collection-mobile",
+      title: "A-One Collection Mobile App",
+      description:
+        "Official Android e-commerce mobile app for A-One Collection Stores, published on the Google Play Store. Enables smooth shopping, catalog browsing, and cash-on-delivery checkout across Nepal.",
+      category: "Mobile",
+      role: "Mobile Developer & Founder",
+      techStack: ["React Native", "Android", "REST API", "Next.js Backend"],
+      liveUrl:
+        "https://play.google.com/store/apps/details?id=com.aonecollection.mobile",
+      playStoreUrl:
+        "https://play.google.com/store/apps/details?id=com.aonecollection.mobile",
+      image: "/projects/a-one-collection-mobile.png",
+      problem:
+        "Mobile shoppers in Nepal need a fast, native Android app for quick browsing, real-time deal alerts, and reliable cash-on-delivery order placement without Web browser overhead.",
+      architecture:
+        "Built with React Native for Android and published on Google Play (Package: com.aonecollection.mobile). Communicates via secure REST APIs with the Next.js e-commerce backend for live catalog sync, cart management, and order tracking.",
+    },
+    {
       slug: "aone-collection-stores",
       title: "A-One Collection Stores",
       description:
-        "My own e-commerce business selling electronics, fashion, and lifestyle products across Nepal. I built the whole platform myself: the customer storefront, the admin panel, and a Seller Center for multi-vendor selling.",
+        "My own e-commerce business selling electronics, fashion, and lifestyle products across Nepal. I built the whole platform myself: customer storefront, admin panel, Seller Center, and native Android mobile app.",
       category: "Web",
       role: "Founder & Developer",
-      techStack: ["Next.js", "React", "Vercel"],
+      techStack: ["Next.js", "React", "React Native", "Android", "Vercel"],
       liveUrl: "https://www.aonecollectionstores.com.np",
+      playStoreUrl:
+        "https://play.google.com/store/apps/details?id=com.aonecollection.mobile",
       image: "/projects/a-one-collection-stores.png",
       gallery: [
         {
@@ -166,7 +193,7 @@ export const portfolioData = {
       problem:
         "Online shopping in Nepal runs on trust. Customers want cash on delivery, clear return policies, and someone who actually responds. I wanted a store that gets those basics right instead of another dropshipping page.",
       architecture:
-        "The platform is a set of Next.js applications deployed on Vercel. The customer storefront handles the product catalog, cart, deals, and cash-on-delivery checkout. An admin panel manages products, inventory, orders, and customers. A separate Seller Center is built for multi-vendor selling, with partner onboarding, KYC review, and payout modules, and is preparing for launch. The business also sells through Daraz, and an Android app is in development.",
+        "The platform is a set of Next.js applications deployed on Vercel along with an Android app on Google Play. The customer storefront handles the product catalog, cart, deals, and cash-on-delivery checkout. An admin panel manages products, inventory, orders, and customers. A separate Seller Center is built for multi-vendor selling, and the native Android app is live on Google Play.",
     },
     {
       slug: "build-with-bipin",
@@ -191,6 +218,7 @@ export const portfolioData = {
       category: "AI/ML",
       techStack: ["Python", "LangChain", "ChromaDB", "Ollama"],
       githubUrl: "https://github.com/Bipin-Paudel/rag-from-scratch",
+      image: "/projects/rag-from-scratch.png",
       problem:
         "Most RAG tutorials show one happy-path pipeline and skip the decisions that actually matter: how to chunk documents, which retrieval strategy to use, and how the pieces fit together. I wanted a course that walks through those choices with runnable code.",
       architecture:
@@ -205,6 +233,7 @@ export const portfolioData = {
       techStack: ["Python", "Scikit-learn", "FastAPI", "Next.js"],
       liveUrl:
         "https://drive.google.com/file/d/1LSeHxZmkLEUtLuDVUy_04vykA4f8RitQ/view?usp=sharing",
+      image: "/projects/humansign.png",
       problem:
         "Distinguish human-typed content from AI-generated or copy-pasted text using behavioral biometrics without collecting personally identifiable information.",
       architecture:

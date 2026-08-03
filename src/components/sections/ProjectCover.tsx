@@ -9,7 +9,7 @@ interface ProjectCoverProps {
 export default function ProjectCover({ project, large }: ProjectCoverProps) {
   if (project.image) {
     return (
-      <div className="relative aspect-video w-full rounded-lg border border-border bg-secondary overflow-hidden">
+      <div className="relative aspect-video w-full rounded-lg border border-border bg-secondary overflow-hidden shadow-sm">
         <Image
           src={project.image}
           alt={`Screenshot of ${project.title}`}
@@ -19,7 +19,7 @@ export default function ProjectCover({ project, large }: ProjectCoverProps) {
               ? "(max-width: 1024px) 100vw, 1024px"
               : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
           }
-          className="object-cover object-top"
+          className="object-cover object-center"
         />
       </div>
     );

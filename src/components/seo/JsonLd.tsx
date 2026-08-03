@@ -43,6 +43,9 @@ export function PersonJsonLd() {
       "Retrieval-Augmented Generation",
       "React",
       "React Native",
+      "Expo",
+      "Android Development",
+      "Mobile App Development",
       "Next.js",
       "PostgreSQL",
     ],
@@ -106,13 +109,21 @@ export function BreadcrumbJsonLd({
 export function ProjectJsonLd({ project }: { project: Project }) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type":
+      project.category === "Mobile"
+        ? "MobileApplication"
+        : "SoftwareApplication",
     name: project.title,
     description: project.description,
     url: `${BASE_URL}/projects/${project.slug}`,
     applicationCategory:
-      project.category === "AI/ML" ? "DeveloperApplication" : "WebApplication",
-    operatingSystem: "Web",
+      project.category === "AI/ML"
+        ? "DeveloperApplication"
+        : project.category === "Mobile"
+        ? "ShoppingApplication"
+        : "WebApplication",
+    operatingSystem: project.category === "Mobile" ? "Android" : "Web",
+    ...(project.playStoreUrl ? { installUrl: project.playStoreUrl } : {}),
     author: {
       "@type": "Person",
       name: portfolioData.about.name,
@@ -141,7 +152,9 @@ export function ProfilePageJsonLd() {
         portfolioData.socials.github,
         portfolioData.socials.linkedin,
         portfolioData.socials.twitter,
-      ],
+        portfolioData.socials.youtube,
+        portfolioData.socials.instagram,
+      ].filter(Boolean),
     },
     dateCreated: "2025-02-23",
   };

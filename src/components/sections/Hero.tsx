@@ -89,14 +89,14 @@ export default function Hero() {
           </div>
 
           {/* ── Photo ── */}
-          <div className="relative w-36 h-36 sm:w-52 sm:h-52 lg:w-72 lg:h-72 shrink-0 rounded-lg overflow-hidden border border-border">
+          <div className="relative w-36 h-44 sm:w-52 sm:h-64 lg:w-72 lg:h-[350px] shrink-0 rounded-xl overflow-hidden border border-border bg-card shadow-sm">
             <Image
-              src="/bipin.jpg"
+              src="/bipin.png"
               alt="Bipin Paudel"
               fill
               sizes="(max-width: 640px) 144px, (max-width: 1024px) 208px, 288px"
               className="object-cover"
-              style={{ objectPosition: "center 85%" }}
+              style={{ objectPosition: "center 0%" }}
               priority
             />
           </div>

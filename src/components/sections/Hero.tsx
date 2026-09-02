@@ -11,31 +11,49 @@ export default function Hero() {
       id="home"
       className="min-h-[calc(100svh-4rem)] mt-16 flex items-center"
     >
-      <div className="max-w-6xl mx-auto px-6 lg:px-8 w-full py-16">
-        <div className="flex flex-col-reverse md:flex-row items-start md:items-center justify-between gap-10 lg:gap-16">
-          {/* ── Text ── */}
-          <div className="flex-1 min-w-0 space-y-5 lg:space-y-6">
-            <p className="text-sm text-muted-foreground font-mono">
-              Open to Software Engineering, Backend & AI roles
-            </p>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-10 sm:py-16">
+        <div className="flex flex-col md:flex-row items-center md:items-center justify-between gap-8 sm:gap-10 lg:gap-16">
+          {/* ── Content Column ── */}
+          <div className="flex-1 min-w-0 space-y-4 sm:space-y-5 lg:space-y-6 w-full text-center md:text-left">
+            {/* Header: Roles, Name, Title */}
+            <div className="space-y-2 sm:space-y-3">
+              <p className="text-sm text-muted-foreground font-mono">
+                Open to Software Engineering, Backend & AI roles
+              </p>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight">
-              {about.name}
-            </h1>
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-semibold tracking-tight">
+                {about.name}
+              </h1>
 
-            <p className="text-lg lg:text-xl font-medium text-primary">
-              {about.title}
-            </p>
+              <p className="text-base sm:text-lg lg:text-xl font-medium text-primary">
+                {about.title}
+              </p>
+            </div>
 
-            <p className="text-muted-foreground lg:text-lg max-w-2xl leading-relaxed">
+            {/* ── Photo (Visible on Mobile only: directly under Name & Title) ── */}
+            <div className="md:hidden relative w-full max-w-[280px] sm:max-w-[320px] aspect-[4/5] shrink-0 rounded-2xl overflow-hidden border border-border bg-card shadow-sm mx-auto my-6">
+              <Image
+                src="/bipin.png"
+                alt="Bipin Paudel"
+                fill
+                sizes="(max-width: 640px) 280px, 320px"
+                className="object-cover"
+                style={{ objectPosition: "center 0%" }}
+                priority
+              />
+            </div>
+
+            {/* Bio description */}
+            <p className="text-sm sm:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto md:mx-0 leading-relaxed">
               {about.tagline}
             </p>
 
-            <div className="flex flex-wrap gap-3 items-center pt-2">
+            {/* Actions & Socials */}
+            <div className="flex flex-wrap gap-2.5 sm:gap-3 items-center justify-center md:justify-start pt-2">
               <Link
                 href="/projects"
                 className="group inline-flex items-center gap-2 rounded-md bg-primary
-                           px-5 py-2.5 text-sm font-medium text-primary-foreground
+                           px-4 sm:px-5 py-2.5 text-sm font-medium text-primary-foreground
                            hover:opacity-90 transition-opacity"
               >
                 View Projects
@@ -46,14 +64,14 @@ export default function Hero() {
                 href={about.resumeLink}
                 download="Bipin_Paudel_Resume.pdf"
                 className="inline-flex items-center gap-2 rounded-md border border-border
-                           bg-background px-5 py-2.5 text-sm font-medium
+                           bg-background px-4 sm:px-5 py-2.5 text-sm font-medium
                            hover:bg-secondary transition-colors"
               >
                 Resume
                 <Download className="w-4 h-4" />
               </a>
 
-              <div className="flex gap-2">
+              <div className="flex items-center gap-2">
                 <a
                   href={socials.github}
                   target="_blank"
@@ -88,13 +106,13 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* ── Photo ── */}
-          <div className="relative w-36 h-44 sm:w-52 sm:h-64 lg:w-72 lg:h-[350px] shrink-0 rounded-xl overflow-hidden border border-border bg-card shadow-sm">
+          {/* ── Photo (Visible on Desktop / Tablets md: and up) ── */}
+          <div className="hidden md:block relative md:w-60 lg:w-72 md:aspect-[4/5] lg:h-[350px] lg:aspect-auto shrink-0 rounded-xl overflow-hidden border border-border bg-card shadow-sm">
             <Image
               src="/bipin.png"
               alt="Bipin Paudel"
               fill
-              sizes="(max-width: 640px) 144px, (max-width: 1024px) 208px, 288px"
+              sizes="(max-width: 1024px) 240px, 288px"
               className="object-cover"
               style={{ objectPosition: "center 0%" }}
               priority

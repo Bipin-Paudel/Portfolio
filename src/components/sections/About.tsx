@@ -14,8 +14,7 @@ export default function About() {
       </p>
 
       <p className="mt-4 text-muted-foreground lg:text-lg leading-relaxed">
-        Right now I&apos;m learning machine learning in depth and building a
-        mobile app with React Native.
+        I focus on designing scalable backend architectures, engineering intelligent AI and RAG pipelines, and delivering complete end-to-end web and mobile systems.
       </p>
 
       <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">

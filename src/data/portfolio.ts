@@ -17,14 +17,14 @@ export type Project = {
 export const portfolioData = {
   about: {
     name: "Bipin Paudel",
-    title: "AI & Backend Developer",
+    title: "Python & AI Developer",
     tagline:
-      "Computer Science student from Nepal building web apps with Python, React, Next.js, and machine learning. I care more about things that actually work than things that look impressive.",
+      "Computer Science student and Python-focused developer experienced in Django, DRF, FastAPI, PostgreSQL, REST APIs, real-world e-commerce systems, AI/ML, and RAG pipelines.",
     description:
-      "I'm studying Computer Science at Tribhuvan University and building web and AI applications on the backend and frontend. My stack is Python, Django, FastAPI, React, Next.js, and practical ML/RAG systems.",
-    address: "Bharatpur-11, Chitwan",
+      "Computer Science student at Tribhuvan University and Python-focused developer experienced in Django, DRF, FastAPI, PostgreSQL, REST APIs, and real-world e-commerce systems. Built the complete A-One Collection Stores platform, including backend, admin, Seller Center, and Android app. Also experienced in AI/ML, data analysis, React/Next.js, React Native, and RAG.",
+    address: "Bharatpur, Nepal",
     phone: "+977 9844735418",
-    email: "info@paudelbipin.com.np",
+    email: "paudelbipin19@gmail.com",
     website: "paudelbipin.com.np",
     resumeLink: "/Bipin_Paudel_Resume.pdf",
   },
@@ -37,12 +37,12 @@ export const portfolioData = {
   },
   education: [
     {
-      degree: "B.Sc. Computer Science and Information Technology",
-      institution: "Tribhuvan University",
-      period: "Feb 2023 - Nov 2027 (Expected)",
+      degree: "B.Sc. Computer Science and Information Technology (B.Sc. CSIT)",
+      institution: "Tribhuvan University, Nepal",
+      period: "Final Year · Expected Nov 2027",
     },
     {
-      degree: "Higher Secondary Education Board",
+      degree: "Higher Secondary Education Board (+2 Science)",
       institution: "Bhawani Vidyapeeth Secondary School",
       period: "2020 - 2022",
     },
@@ -68,87 +68,116 @@ export const portfolioData = {
     {
       role: "Software Developer",
       company: "SkinPal AI",
-      period: "Feb 2026 - Present",
+      period: "Feb 2026 - Aug 2026",
       location: "Remote",
       bullets: [
-        "Working on backend and AI features for an AI skin-analysis app used by 13,000+ people daily.",
-        "Built the RAG pipeline behind the product's skincare assistant.",
+        "Work on backend and AI features for an AI skin-analysis app used by 13,000+ people daily.",
+        "Built the RAG pipeline powering the product's AI skincare assistant.",
       ],
       link: "https://skinpalai.app",
-    },
-    {
-      role: "Web Developer",
-      company: "Khata Academy",
-      period: "Aug 2025 - Jan 2026",
-      location: "Bharatpur",
-      bullets: [
-        "Built a financial MIS for business data tracking.",
-        "Developed tools like Business Model Canvas and Persona generators.",
-        "Worked with Django and React to deliver features end to end.",
-      ],
-      link: "https://tools.khatapreneur.com",
-    },
-    {
-      role: "Data Fellow",
-      company: "Code for Nepal",
-      period: "May 2025 - Present",
-      location: "Remote",
-      bullets: ["Working on data analysis tasks and community tech projects."],
-      link: "",
     },
     {
       role: "Founder, Developer & Manager",
       company: "A-One Collection Stores",
       period: "2024 - Present",
-      location: "Bharatpur",
+      location: "Bharatpur, Nepal",
       bullets: [
-        "Founded and run an e-commerce business selling electronics, fashion, and lifestyle products across Nepal.",
-        "Built the full platform in Next.js: customer storefront, admin panel, and a Seller Center for multi-vendor selling.",
-        "Handle inventory, Daraz marketplace listings, and the cash-on-delivery order flow.",
+        "Founded and manage an e-commerce platform serving customers across Nepal.",
+        "Built the storefront, admin panel, Seller Center, backend services, and mobile app.",
+        "Manage product, inventory, marketplace, and order workflows.",
       ],
       link: "https://www.aonecollectionstores.com.np",
     },
+    {
+      role: "Web Developer",
+      company: "Khata Academy",
+      period: "Aug 2025 - Jan 2026",
+      location: "Bharatpur, Nepal",
+      bullets: [
+        "Built a Financial MIS for business data tracking and operational workflows.",
+        "Developed Business Model Canvas and Persona Generator tools.",
+      ],
+      link: "https://tools.khatapreneur.com",
+    },
   ],
   skills: {
-    programming: ["Python", "JavaScript", "TypeScript", "HTML & CSS", "Java"],
+    programming: ["Python", "SQL", "JavaScript", "Java"],
     frameworks: [
-      "Django / DRF",
+      "Django",
+      "Django REST Framework",
       "FastAPI",
-      "React",
-      "Next.js",
-      "Tailwind CSS",
+      "REST APIs",
+      "API Design",
     ],
     ml: [
+      "Pandas",
+      "NumPy",
       "Scikit-learn",
-      "NumPy & Pandas",
-      "Matplotlib / Seaborn",
+      "NLP",
       "Sentence-BERT",
-      "LangChain / RAG",
+      "LangChain",
+      "RAG",
+      "PyMuPDF",
     ],
-    mobile: [
-      "React Native",
-      "Expo",
-      "Android Development",
-      "Mobile Architecture",
-      "Google Play Publishing",
-    ],
+    mobile: ["React.js", "Next.js", "React Native"],
     databases: ["PostgreSQL", "MySQL", "MongoDB", "SQLite"],
-    tools: ["Git", "Docker", "VS Code", "Postman", "Linux"],
+    tools: ["Git", "GitHub", "Docker", "Postman", "Linux"],
   },
   projects: [
+    {
+      slug: "aone-collection-stores",
+      title: "A-One Collection Stores",
+      description:
+        "An e-commerce platform with storefront, admin panel, Seller Center, backend, and mobile app, including product, order, inventory, and seller workflows.",
+      category: "Web",
+      role: "Founder & Developer",
+      techStack: ["Django", "PostgreSQL", "React", "Next.js", "Android"],
+      liveUrl: "https://www.aonecollectionstores.com.np",
+      playStoreUrl:
+        "https://play.google.com/store/apps/details?id=com.aonecollection.mobile",
+      image: "/projects/a-one-collection-stores.png",
+      gallery: [
+        {
+          src: "/projects/a-one-collection-stores.png",
+          caption: "Customer storefront with catalog, deals, and COD checkout",
+        },
+        {
+          src: "/projects/a-one-seller-panel.png",
+          caption: "Seller Center for multi-vendor selling, preparing for launch",
+        },
+      ],
+      problem:
+        "Online shopping in Nepal runs on trust. Customers want cash on delivery, clear return policies, and someone who actually responds. I built a comprehensive platform with full inventory, multi-seller workflows, and mobile access to serve customers reliably.",
+      architecture:
+        "Built with Django and PostgreSQL for robust backend services, data models, and business logic. The frontend and admin/seller systems leverage React and Next.js, while a native Android application connects via REST APIs for real-time mobile order and catalog synchronization.",
+    },
     {
       slug: "researchgap",
       title: "ResearchGap AI",
       description:
-        "A literature-review platform that helps PhD candidates and researchers compile papers, run semantic theme analysis, and pinpoint research gaps grounded in the sources. Live at researchgap.tech.",
+        "An AI platform using semantic embeddings and clustering to analyze research literature and identify potential research gaps.",
       category: "AI/ML",
-      techStack: ["Python", "Sentence-BERT", "K-Means", "scikit-learn", "Next.js"],
+      techStack: ["Python", "Sentence-BERT", "Scikit-learn", "K-Means", "Next.js"],
       liveUrl: "https://www.researchgap.tech",
       image: "/projects/researchgap.jpg",
       problem:
         "Finding a genuine research gap means reading hundreds of papers by hand. Most students and early researchers don't have time for that, so they end up picking topics that are already crowded.",
       architecture:
-        "Papers are ingested from sources like arXiv and OpenAlex, embedded with Sentence-BERT, then clustered with K-Means to group them by theme. Bibliometric analysis on each cluster looks at publication counts, recency, and citation activity to surface the underexplored themes. The app itself walks users through collecting papers, clustering them, pinpointing gaps, and exporting a report, with a Next.js frontend.",
+        "Papers are ingested from academic sources, embedded with Sentence-BERT, then clustered with K-Means to group them by theme. Bibliometric analysis on each cluster looks at publication counts, recency, and citation activity to surface underexplored themes. The app walks users through collecting papers, clustering them, pinpointing gaps, and exporting a report, with a Next.js frontend.",
+    },
+    {
+      slug: "rag-from-scratch",
+      title: "RAG From Scratch",
+      description:
+        "A 13-module RAG system covering document ingestion, chunking, vector search, reranking, and conversational RAG.",
+      category: "AI/ML",
+      techStack: ["Python", "LangChain", "ChromaDB", "Ollama"],
+      githubUrl: "https://github.com/Bipin-Paudel/rag-from-scratch",
+      image: "/projects/rag-from-scratch.png",
+      problem:
+        "Most RAG tutorials show one happy-path pipeline and skip the decisions that actually matter: how to chunk documents, which retrieval strategy to use, and how the pieces fit together.",
+      architecture:
+        "Thirteen progressive modules in Python notebooks. The first four build the core pipeline from document ingestion to conversational RAG with chat history. The middle modules compare chunking strategies: character-based, recursive, semantic, and LLM-driven. The later modules cover multi-query retrieval, reciprocal rank fusion, hybrid search, and reranking with Cohere. Everything runs locally with Llama 3 through Ollama and ChromaDB for vector storage.",
     },
     {
       slug: "aone-collection-mobile",
@@ -166,34 +195,7 @@ export const portfolioData = {
       problem:
         "Mobile shoppers in Nepal need a fast, native Android app for quick browsing, real-time deal alerts, and reliable cash-on-delivery order placement without Web browser overhead.",
       architecture:
-        "Built with React Native for Android and published on Google Play (Package: com.aonecollection.mobile). Communicates via secure REST APIs with the Next.js e-commerce backend for live catalog sync, cart management, and order tracking.",
-    },
-    {
-      slug: "aone-collection-stores",
-      title: "A-One Collection Stores",
-      description:
-        "My own e-commerce business selling electronics, fashion, and lifestyle products across Nepal. I built the whole platform myself: customer storefront, admin panel, Seller Center, and native Android mobile app.",
-      category: "Web",
-      role: "Founder & Developer",
-      techStack: ["Next.js", "React", "React Native", "Android", "Vercel"],
-      liveUrl: "https://www.aonecollectionstores.com.np",
-      playStoreUrl:
-        "https://play.google.com/store/apps/details?id=com.aonecollection.mobile",
-      image: "/projects/a-one-collection-stores.png",
-      gallery: [
-        {
-          src: "/projects/a-one-collection-stores.png",
-          caption: "Customer storefront with catalog, deals, and COD checkout",
-        },
-        {
-          src: "/projects/a-one-seller-panel.png",
-          caption: "Seller Center for multi-vendor selling, preparing for launch",
-        },
-      ],
-      problem:
-        "Online shopping in Nepal runs on trust. Customers want cash on delivery, clear return policies, and someone who actually responds. I wanted a store that gets those basics right instead of another dropshipping page.",
-      architecture:
-        "The platform is a set of Next.js applications deployed on Vercel along with an Android app on Google Play. The customer storefront handles the product catalog, cart, deals, and cash-on-delivery checkout. An admin panel manages products, inventory, orders, and customers. A separate Seller Center is built for multi-vendor selling, and the native Android app is live on Google Play.",
+        "Built with React Native for Android and published on Google Play (Package: com.aonecollection.mobile). Communicates via secure REST APIs with the e-commerce backend for live catalog sync, cart management, and order tracking.",
     },
     {
       slug: "build-with-bipin",
@@ -209,20 +211,6 @@ export const portfolioData = {
         "Most tutorials chase hype and stop at toy examples. I wanted a place that teaches fundamentals first and walks through production-grade projects end to end, fully open source and free.",
       architecture:
         "A Next.js site deployed on Vercel with structured learning paths from Python fundamentals up to LLM systems. Long-form walkthroughs go on the Build With Bipin YouTube channel, and all project source code lives on GitHub. Content is being built in public.",
-    },
-    {
-      slug: "rag-from-scratch",
-      title: "RAG From Scratch",
-      description:
-        "An open-source, 13-module course on Retrieval-Augmented Generation that I built while learning RAG engineering end to end. Covers ingestion, chunking strategies, vector search, hybrid retrieval, reranking, and conversational RAG.",
-      category: "AI/ML",
-      techStack: ["Python", "LangChain", "ChromaDB", "Ollama"],
-      githubUrl: "https://github.com/Bipin-Paudel/rag-from-scratch",
-      image: "/projects/rag-from-scratch.png",
-      problem:
-        "Most RAG tutorials show one happy-path pipeline and skip the decisions that actually matter: how to chunk documents, which retrieval strategy to use, and how the pieces fit together. I wanted a course that walks through those choices with runnable code.",
-      architecture:
-        "Thirteen progressive modules in Python notebooks. The first four build the core pipeline from document ingestion to conversational RAG with chat history. The middle modules compare chunking strategies: character-based, recursive, semantic, and LLM-driven. The later modules cover multi-query retrieval, reciprocal rank fusion, hybrid search, and reranking with Cohere. Everything runs locally with Llama 3 through Ollama and ChromaDB for vector storage.",
     },
     {
       slug: "humansign",
@@ -260,13 +248,13 @@ export const portfolioData = {
       description:
         "A financial management information system and set of business tools (Business Model Canvas, Persona Generator, Employee Agreement Generator) built for Khata Academy.",
       category: "Web",
-      techStack: ["Laravel", "React", "PostgreSQL", "REST API"],
+      techStack: ["Django", "React", "PostgreSQL", "REST API"],
       liveUrl: "https://tools.khatapreneur.com",
       image: "/projects/khata-academy-mis.jpg",
       problem:
         "Small businesses needed an integrated platform to track finances and generate strategic planning documents without expensive software.",
       architecture:
-        "Laravel powers the backend API; React renders the business tools on the frontend. PostgreSQL stores financial records with row-level security.",
+        "Financial MIS and business planning tools built with backend REST APIs and interactive React frontends with PostgreSQL database storage.",
     },
   ] satisfies Project[],
 };

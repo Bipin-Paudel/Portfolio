@@ -16,7 +16,7 @@ export default function Hero() {
           {/* ── Text ── */}
           <div className="flex-1 min-w-0 space-y-5 lg:space-y-6">
             <p className="text-sm text-muted-foreground font-mono">
-              Open to ML engineer roles and internships 
+              Open to Software Engineering, Backend & AI roles
             </p>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight">

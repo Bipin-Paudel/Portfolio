@@ -3,11 +3,11 @@ import SectionShell from "./SectionShell";
 
 export default function Skills() {
   const groups = [
-    { title: "Programming", items: portfolioData.skills.programming },
-    { title: "Web & Backend", items: portfolioData.skills.frameworks },
-    { title: "AI & Data Science", items: portfolioData.skills.ml },
-    { title: "Mobile", items: portfolioData.skills.mobile },
+    { title: "Languages", items: portfolioData.skills.programming },
+    { title: "Backend & APIs", items: portfolioData.skills.frameworks },
+    { title: "Data & AI", items: portfolioData.skills.ml },
     { title: "Databases", items: portfolioData.skills.databases },
+    { title: "Frontend & Mobile", items: portfolioData.skills.mobile },
     { title: "Tools", items: portfolioData.skills.tools },
   ];
 
